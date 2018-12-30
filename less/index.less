@@ -1,0 +1,284 @@
+/* 引入全局样式 */
+@import './base.less';
+
+
+.layout {
+    /* 最大640px */
+    max-width: 6.4rem;
+    /*  居中显示 */
+    margin: 0px auto;
+    background-color: #f5f5f5;
+    /* 为了让底部的内容不和底部导航重叠在一起  让内容往上走*/
+    padding-bottom: 0.6rem;
+    /* 公共的头部样式 */
+    #header{
+        width: 100%;
+        max-width: 6.4rem;
+        display: flex;
+        background-color:  rgba(222, 24, 27, 0);
+        position: fixed;
+        top: 0;
+        z-index: 999;
+        .logo{
+            display: block;
+            width: 0.8rem;
+            height: 0.3rem;
+            padding: 0 0.1rem;
+            margin-top: 0.05rem;
+            background-image: url('../images/sprites.png');
+            background-size: 2rem 2rem;
+            background-position: 0 -1.05rem;
+            background-clip: content-box;
+            background-origin: content-box;
+        }
+        form{
+            flex: 1;
+            padding: 0.05rem 0;
+            position: relative;
+            input{
+                width: 100%;
+                height: 0.3rem;
+                border-radius: 0.15rem;
+                font-size: 0.12rem;
+                text-indent: 0.35rem;
+            }
+            .search{
+                width: 0.2rem;
+                height: 0.2rem;
+                display: block;
+                background-image: url('../images/sprites.png');
+                background-size: 2rem 2rem;
+                background-position: -0.6rem -1.1rem;
+                background-clip: content-box;
+                background-origin: content-box;
+                position: absolute;
+                left: 0.1rem;
+                top: 0.12rem;
+            }
+        }
+        .login{
+            width: 0.5rem;
+            height: 0.35rem;
+            line-height: 0.35rem;
+            color: #fff;
+            display: block;
+            text-align: center;
+            font-size: 0.14rem;
+        }
+    }
+    /* 轮播图样式 */
+    #slide{
+        .swiper-pagination-bullet-active{
+            background-color: #fff;
+        }
+        img{
+           width: 100%;  
+        }  
+    }
+    /* 导航区域 */
+    #nav{
+        width: 100%;
+        padding: 0.1rem 0.1rem;
+        text-align: center;
+        background-color: #fff;
+        ul{
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            li{
+                width: 25%;
+                a{
+                    display: block;
+                    width: 100%;
+                    padding-bottom: 0.05rem;   
+                    img{
+                        width: 0.4rem;
+                        height: 0.4rem;
+                        margin-bottom: 0.05rem;
+                    }
+                    p{
+                        font-size: 0.14rem;
+                    }
+                }
+            }
+        }
+    }
+    /* 主体区域 */
+    #main{
+        width: 96%;
+        margin: 0 auto;
+        .seckill{
+            margin-top: 0.15rem;
+            font-size: 0.14rem;
+            .miaosha{
+                display: flex;
+                padding-top: 0.05rem;
+                background-color: #fff;
+                img{
+                    height: 0.25rem;
+                    padding: 0 0.05rem;
+                }
+                >p{
+                    padding: 0.03rem 0.05rem 0px;
+                    color: @mainColor;
+                }
+                a{
+                    display: block;
+                    width: 0.5rem;
+                    padding-right: 0.05rem;
+                }
+                #time{
+                    flex: 1;
+                    display: flex;
+                    padding-top: 0.03rem;
+                    p{
+                        width: 0.15rem;
+                        height: 0.15rem;
+                        margin-right: 0.05rem;
+                        background-color: black;
+                        color: #fff;
+                        text-align: center;
+                        line-height: 0.15rem;
+                        &:nth-child(3n){
+                            color: #000;
+                            background-color: transparent;
+                        }
+                        
+                    }
+                    span{
+                        display: block;
+                        margin-right: 0.05rem;
+                    }
+                }
+            }
+            .computer{
+                padding:0.1rem 0px;
+                background-color: #fff;
+                display: flex;
+                >div{
+                    text-align: center;
+                    font-size: 0.1rem;
+                    width: 33%;
+                    p{
+                        color:@mainColor;
+                    }
+                    del{
+                        color:#666;
+                    }
+                    &:nth-child(n+2){
+                        border-left: 0.01rem solid #ccc;
+                    }
+                    img{
+                        width: 100%;
+                    }
+                }
+               
+            }
+        }
+        .market1{
+            margin-top: 0.1rem;
+            background-color: #fff;
+            .tlt{
+                height: 0.3rem;
+                border-bottom: 0.01rem solid #ccc;
+                position: relative;
+                >p{
+                height: 0.15rem;
+                line-height: 0.3rem;
+                padding-left: 0.15rem;
+                &::before{
+                    content: '';
+                    width: 0.04rem;
+                    height: 0.15rem;
+                    background-color: @mainColor;
+                    position: absolute;
+                    left: 0.05rem;
+                    top: 0.075rem;
+                   }
+                }
+            }
+            .content{
+                display: flex;
+                .left{
+                    width: 50%;
+                    height: 100%;
+                    border-right: 0.01rem solid #ccc;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .right{
+                    width: 50%;
+                    img{
+                        width: 100%;
+                        height: 50%;
+                        &:first-child{
+                            border-bottom: 0.01rem solid #ccc;
+                        }
+                    }
+                }
+            }
+        }
+        .market2{
+            margin-top: 0.1rem;
+            background-color: #fff;
+            .tlt{
+                height: 0.3rem;
+                border-bottom: 0.01rem solid #ccc;
+                position: relative;
+                >p{
+                height: 0.15rem;
+                line-height: 0.3rem;
+                padding-left: 0.15rem;
+                &::before{
+                    content: '';
+                    width: 0.04rem;
+                    height: 0.15rem;
+                    background-color: @mainColor;
+                    position: absolute;
+                    left: 0.05rem;
+                    top: 0.075rem;
+                   }
+                }
+            }
+            .content{
+                display: flex;
+                .left{
+                    width: 50%;
+                    border-left: 0.01rem solid #ccc;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .right{
+                    width: 50%;
+                    img{
+                        width: 100%;
+                        height: 50%;
+                        &:first-child{
+                            border-bottom: 0.01rem solid #ccc;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /*尾部区域 */
+    #footer{
+        width: 96%;
+        margin: 0 auto;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+
+       ul{
+        background-color: #fff;
+           display: flex;
+           justify-content: space-around;
+           img{
+               width: .65rem;
+           }
+       }
+    }
+}
